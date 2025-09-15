@@ -12,67 +12,231 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link href="styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
   </head>
-  <body style="max-width: 960px; margin: auto">
-    <div id="header"></div>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="/assets/images/blogLogo.svg"
+              alt="EverythingGreen"
+              class="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
+            <button class="btn btn-outline-success login-btn">Login</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <div class="container hero-content">
       <h1 class="hero-title">Blog</h1>
       <p class="hero-breadcrumb">Home &gt; Blog</p>
-      <div class="featured-post">
-        <div class="row g-0">
-          <div class="col-lg-6">
-            <div class="featured-content">
-              <div class="post-meta">
-                <span class="author"
-                  >By <strong class="text-success">Dipak</strong></span
-                >
-              </div>
-              <h2 class="featured-title">
-                Impact of Blockchain Technology on Sustainability
-              </h2>
-              <div class="post-info">
-                <span>August 26, 2024</span>
-                <span class="separator"></span>
-                <span>4 Min Read</span>
-              </div>
-              <p class="featured-excerpt">
-                As we continually make strides to embrace sustainability
-                practices, we must utilize everything at our disposal. One
-                significant component at our disposal in this pursuit is
-                technology.
-              </p>
-              <div class="slider-btn">
-                <div
-                  class="slider-btn facebook"
-                  title="Share on Facebook"
-                ></div>
-                <div class="slider-btn twitter" title="Share on Twitter"></div>
+
+      <!-- Bootstrap Carousel -->
+      <div id="featuredCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <!-- First Slide -->
+          <div class="carousel-item active">
+            <div class="featured-post">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="featured-content">
+                    <div>
+                      <div class="post-meta">
+                        <span class="author">
+                          By <strong class="text-success">Dipak</strong>
+                        </span>
+                      </div>
+                      <h4 class="fw-600">
+                        Impact of Blockchain Technology on Sustainability
+                      </h4>
+                      <div class="post-info">
+                        <span>August 26, 2024</span>
+                        <span class="separator"></span>
+                        <span>4 Min Read</span>
+                      </div>
+                      <p class="featured-excerpt">
+                        As we continually make strides to embrace sustainability
+                        practices, we must utilize everything at our disposal.
+                        One significant component at our disposal in this
+                        pursuit is technology.
+                      </p>
+                    </div>
+
+                    <!-- Arrows inside content -->
+                    <div class="arrows d-flex gap-3 mt-5">
+                      <button
+                        class="btn rounded-circle d-flex align-items-center justify-content-center"
+                        style="
+                          width: 34px;
+                          height: 34px;
+                          font-weight: 700;
+                          border: 1px solid #ddd;
+                          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                          background-color: #fff;
+                        "
+                        type="button"
+                        data-bs-target="#featuredCarousel"
+                        data-bs-slide="prev"
+                      >
+                        &lsaquo;
+                      </button>
+                      <button
+                        class="btn rounded-circle d-flex align-items-center justify-content-center"
+                        style="
+                          width: 34px;
+                          height: 34px;
+                          font-weight: 700;
+                          border: 1px solid #ddd;
+                          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                          background-color: #fff;
+                        "
+                        type="button"
+                        data-bs-target="#featuredCarousel"
+                        data-bs-slide="next"
+                      >
+                        &rsaquo;
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="featured-image">
+                    <a
+                      href="impact-of-blockchain-technology-in-sustainability.html"
+                    >
+                      <img
+                        src="/assets/images/blog-hero.png"
+                        alt="Blockchain Technology"
+                        class="img-fluid"
+                      />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="featured-image">
-              <a href="impact-of-blockchain-technology-in-sustainability.html">
-                <img
-                  src="./assets/blog-hero.png"
-                  alt="Blockchain Technology"
-                  class="img-fluid"
-                />
-              </a>
+
+          <!-- Second Slide Example -->
+          <div class="carousel-item">
+            <div class="featured-post">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="featured-content">
+                    <div>
+                      <div class="post-meta">
+                        <span class="author">
+                          By <strong class="text-success">Alex</strong>
+                        </span>
+                      </div>
+                      <h4 class="fw-600">The Future of AI in Finance</h4>
+                      <div class="post-info">
+                        <span>September 10, 2024</span>
+                        <span class="separator"></span>
+                        <span>5 Min Read</span>
+                      </div>
+                      <p class="featured-excerpt">
+                        Artificial intelligence is reshaping the finance
+                        industry with predictive analytics, fraud detection, and
+                        personalized services.
+                      </p>
+                    </div>
+
+                    <!-- Arrows inside content -->
+                    <div class="d-flex gap-3 mt-5 arrows">
+                      <button
+                        class="btn rounded-circle d-flex align-items-center justify-content-center"
+                        style="
+                          width: 34px;
+                          height: 34px;
+                          font-weight: 700;
+                          border: 1px solid #ddd;
+                          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                          background-color: #fff;
+                        "
+                        type="button"
+                        data-bs-target="#featuredCarousel"
+                        data-bs-slide="prev"
+                      >
+                        &lsaquo;
+                      </button>
+                      <button
+                        class="btn rounded-circle d-flex align-items-center justify-content-center"
+                        style="
+                          width: 34px;
+                          height: 34px;
+                          font-weight: 700;
+                          border: 1px solid #ddd;
+                          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                          background-color: #fff;
+                        "
+                        type="button"
+                        data-bs-target="#featuredCarousel"
+                        data-bs-slide="next"
+                      >
+                        &rsaquo;
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="featured-image">
+                    <a href="future-of-ai-in-finance.html">
+                      <img
+                        src="/assets/images/blog-hero.png"
+                        alt="AI in Finance"
+                        class="img-fluid"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <main class="container my-5">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="section-header">
             <h2 class="section-title">All Posts</h2>
             <div class="title-underline"></div>
           </div>
-          <div class="row g-4 mb-5" id="blogPosts"></div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row g-4 mb-4" id="blogPosts"></div>
           <div class="text-center">
             <button class="btn btn-success load-more-btn" id="loadMoreBtn">
               Load More
@@ -90,9 +254,9 @@
                   class="popular-thumb"
                 />
                 <div class="popular-content">
-                  <h4 class="popular-title">
+                  <h6 class="popular-title">
                     About Personal Finance You need to stop Believing
-                  </h4>
+                  </h6>
                   <div class="popular-meta">
                     <span>By <strong>credio</strong></span>
                     <span class="separator"></span>
@@ -107,9 +271,9 @@
                   class="popular-thumb"
                 />
                 <div class="popular-content">
-                  <h4 class="popular-title">
+                  <h6 class="popular-title">
                     Green Investment Strategies for 2024
-                  </h4>
+                  </h6>
                   <div class="popular-meta">
                     <span>By <strong>sarah</strong></span>
                     <span class="separator"></span>
@@ -124,7 +288,7 @@
                   class="popular-thumb"
                 />
                 <div class="popular-content">
-                  <h4 class="popular-title">Sustainable Living Made Simple</h4>
+                  <h6 class="popular-title">Sustainable Living Made Simple</h6>
                   <div class="popular-meta">
                     <span>By <strong>mike</strong></span>
                     <span class="separator"></span>
@@ -137,12 +301,85 @@
         </div>
       </div>
     </main>
-    <div id="footer"></div>
+    <footer class="footer-section">
+      <div class="footer-background"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="footer-brand">
+              <img
+                src="/assets/images/blogLogo.svg"
+                alt="EverythingGreen"
+                class="footer-logo"
+              />
+              <p class="footer-description pb-2">
+                Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="footer-column">
+                  <h5 class="footer-title">Solutions</h5>
+                  <ul class="footer-links">
+                    <li><a href="#">Web Tool</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Research</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="footer-column">
+                  <h5 class="footer-title">Company</h5>
+                  <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Methodology</a></li>
+                    <li><a href="#">Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="footer-column">
+                  <h5 class="footer-title">Community</h5>
+                  <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Open-Source Data</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="copyright">
+              Copyright &copy; 2025 everythinggreen. All Rights Reserved
+            </p>
+          </div>
+          <div class="col-md-6 d-flex justify-content-md-end gap-3">
+            <a href="#" class="text-secondary fs-5"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-secondary fs-5"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a href="#" class="text-secondary fs-5"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a href="#" class="text-secondary fs-5"
+              ><i class="bi bi-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-      includeHTML("header", "header.html");
-      includeHTML("footer", "footer.html");
-    </script>
+    <script src="/assets/js/script.js"></script>
   </body>
 </html>

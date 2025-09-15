@@ -42,7 +42,7 @@ const blogPosts = [
   {
     image:
       "https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "",
+    title: "Renewable Energy Investment Opportunities in 2024",
     author: "Lisa",
     date: "Dec 3, 2023",
     readTime: "4 Min Read",
@@ -153,12 +153,3 @@ document.addEventListener("DOMContentLoaded", function () {
   generateBlogPosts(blogPosts.slice(0, 6));
   setupLoadMore();
 });
-
-function includeHTML(id, file) {
-  fetch(file)
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById(id).innerHTML = data;
-    })
-    .catch((error) => console.error("Error loading file:", file, error));
-}

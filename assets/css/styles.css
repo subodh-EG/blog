@@ -30,7 +30,38 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 980px;
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+  font-size: 3.4375rem;
+  line-height: auto;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 2.8125rem;
+  line-height: auto;
+  letter-spacing: 0;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: regular;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: auto;
+}
+
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: semi-bold;
+  font-size: 0.875rem;
+  line-height: auto;
 }
 
 /* Header Styles */
@@ -43,6 +74,10 @@ body {
     rgba(255, 255, 255, 0) 100%
   );
   overflow: hidden;
+}
+
+.py-6 {
+  padding-top: 4.375rem !important;
 }
 
 .hero-background {
@@ -95,18 +130,6 @@ body {
   color: var(--text-dark);
 }
 
-.navbar-nav .nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 2px;
-  background-color: var(--primary-green);
-  border-radius: 1px;
-}
-
 .login-btn {
   border: 1px solid var(--dark-green) !important;
   color: var(--text-dark) !important;
@@ -124,11 +147,50 @@ body {
   transform: translateY(-2px);
 }
 
+/* Continuous faint grid background for header and hero-content */
+header,
+.hero-content {
+  position: relative;
+  z-index: 1;
+  /* Remove any background that could break the grid */
+}
+
+header::before,
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 100 100"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="%23e0e0e0" stroke-width="1"/></svg>');
+  background-repeat: repeat;
+  background-size: 55px 55px;
+  opacity: 0.86;
+}
+
+/* Make the grid lines continuous between header and hero-content */
+header::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.hero-content::before {
+  top: -1px; /* Overlap by 1px to avoid visible seam */
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
 /* Hero Content */
 .hero-content {
   position: relative;
   z-index: 2;
-  padding-top: 100px;
+  padding-top: 4.375rem;
 }
 
 .hero-title {
@@ -142,7 +204,7 @@ body {
 
 .hero-breadcrumb {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
   color: var(--text-dark);
   font-size: 16px;
 }
@@ -256,17 +318,14 @@ body {
 }
 
 .section-title {
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
-  font-size: 45px;
   margin-bottom: 20px;
-  color: var(--text-dark);
+  color: black;
 }
 
 .title-underline {
   width: 100%;
   height: 1px;
-  background-color: rgba(23, 23, 23, 0.08);
+  background-color: var(--text-gray);
   position: relative;
 }
 
@@ -298,7 +357,9 @@ body {
 
 .blog-content {
   padding: 19px;
-  position: relative;
+  border: 0.5px solid var(--border-light);
+  border-top: none;
+  border-radius: 0 0 5px 5px;
 }
 
 .blog-meta {
@@ -324,10 +385,10 @@ body {
   gap: 10px;
   font-size: 14px;
   color: var(--text-dark);
-  position: absolute;
   bottom: 19px;
   left: 19px;
   right: 19px;
+  margin-top: 8px;
 }
 
 /* Load More Button */
@@ -361,7 +422,6 @@ body {
   padding: 20px 15px;
   position: sticky;
   top: 20px;
-  margin-top: 110px;
 }
 
 .sidebar-title {
@@ -383,7 +443,6 @@ body {
   gap: 15px;
   align-items: flex-start;
   cursor: pointer;
-  padding: 10px;
   border-radius: 8px;
 }
 .popular-post-item:hover {
@@ -405,17 +464,15 @@ body {
 
 .popular-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 73px;
 }
 
-.popular-title {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.4;
-  margin-bottom: 8px;
-  color: var(--text-dark);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* Tags Section */
+.bg-tags {
+  background-color: #f0f2f1;
 }
 
 .popular-meta {
@@ -430,8 +487,9 @@ body {
 /* Footer */
 .footer-section {
   position: relative;
-  padding: 80px 0 40px;
+  padding: 70px 0 40px;
   margin-top: 100px;
+  background: linear-gradient(to top, #f0fdfa 0%, #ffffff 100%);
 }
 
 .footer-background {
@@ -494,58 +552,37 @@ body {
 .footer-divider {
   border-color: #595959;
   margin: 50px 0 30px;
+  opacity: 0.3;
 }
 
 .copyright {
   color: var(--text-gray);
   font-size: 15px;
-  margin: 0;
 }
 
-.social-icons {
-  display: flex;
-  gap: 5px;
-  justify-content: flex-end;
+/* Footer Social Icons Hover Colors */
+.footer-section .bi-facebook:hover {
+  color: #1877f3;
+}
+.footer-section .bi-twitter-x:hover {
+  color: #1da1f2;
+}
+.footer-section .bi-linkedin:hover {
+  color: #0077b5;
+}
+.footer-section .bi-instagram:hover {
+  color: #e4405f !important;
 }
 
-.social-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
+/* Arrows Styling */
+.arrows {
+  bottom: 30px;
+  left: 30px;
 }
 
-.social-icon::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.featured-content {
+  justify-content: space-between;
 }
-
-.social-icon.facebook-icon::before {
-  background-image: url("./assets/Facebook.svg");
-}
-
-.social-icon.twitter-icon::before {
-  background-image: url("./assets/Twitter.svg");
-}
-
-.social-icon.instagram-icon::before {
-  background-image: url("./assets/Instagram.svg");
-}
-
-.social-icon.youtube-icon::before {
-  background-image: url("./assets/Youtube.svg");
-}
-
 /* Responsive Design */
 @media (max-width: 991.98px) {
   .hero-title {
@@ -562,15 +599,6 @@ body {
 
   .featured-image {
     height: 300px;
-  }
-
-  .featured-content {
-    padding: 30px 20px;
-  }
-
-  .social-icons {
-    justify-content: center;
-    margin-top: 20px;
   }
 }
 
